@@ -2,9 +2,9 @@
 Funcionalidade: Aprender Cucumber
   Como um aluno
   Eu quero aprender utilizar cucumber
-  Para que eu possa automatizar critérios de aceitação
+  Para que eu possa automatizar critÃ©rios de aceitaï¿½ï¿½o
 
-  Cenario: Deve executar uma especificação
+  Cenario: Deve executar uma especificaÃ§Ã£o
     Dado que criei arquivo corretamente
     Quando executa-lo
-    Entao a especificação deve finalizar com sucesso
+    Entao a especificaÃ§Ã£o deve finalizar com sucesso

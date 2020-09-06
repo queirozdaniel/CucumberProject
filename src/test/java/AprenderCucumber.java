@@ -1,26 +1,18 @@
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.Entao;
+import io.cucumber.java.pt.Quando;
 
 public class AprenderCucumber {
 
-	@Given("^que criei arquivo corretamente$")
+	@Dado("que criei arquivo corretamente")
 	public void que_criei_arquivo_corretamente() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
 	}
 
-	@When("^executa-lo$")
+	@Quando("executa-lo")
 	public void executa_lo() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("^a especifica��o deve finalizar com sucesso$")
-	public void a_especifica_o_deve_finalizar_com_sucesso() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	@Entao("a especificação deve finalizar com sucesso")
+	public void a_especificação_deve_finalizar_com_sucesso() {
 	}
-	
-	
 }
