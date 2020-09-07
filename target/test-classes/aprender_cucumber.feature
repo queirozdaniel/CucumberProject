@@ -8,3 +8,9 @@ Funcionalidade: Aprender Cucumber
     Dado que criei arquivo corretamente
     Quando executa-lo
     Entao a especificação deve finalizar com sucesso
+	
+	Cenario: Deve incrementar contador
+		Dado que o valor do cantador é 15
+		Quando eu imcrementar em 3
+		Entao o valor do cantador será 18
+		

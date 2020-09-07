@@ -4,7 +4,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"summary"})
+@CucumberOptions(plugin = {"pretty","summary"})
 public class Runner {
 
 }
