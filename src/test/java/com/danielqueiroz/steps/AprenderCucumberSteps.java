@@ -1,3 +1,4 @@
+package com.danielqueiroz.steps;
 import java.text.Format;
 import java.text.NumberFormat;
 import java.util.Calendar;
@@ -6,13 +7,18 @@ import java.util.Locale;
 
 import org.junit.jupiter.api.Assertions;
 
-import io.cucumber.java.Transpose;
+import com.danielqueiroz.converters.DateConverter;
+
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 
-public class AprenderCucumber {
+public class AprenderCucumberSteps {
 
+	public AprenderCucumberSteps() {
+		new DateConverter();
+	}
+	
 	@Dado("que criei arquivo corretamente")
 	public void que_criei_arquivo_corretamente() {
 	}
@@ -65,7 +71,7 @@ public class AprenderCucumber {
 
 	// Regex
 	@Entao("a entrega será efetuada em {date}")
-	public void a_entrega_será_efetuada_em(Date date) {
+	public void a_entrega_será_efetuada_em( Date date) {
 //		DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 //		String dataEntregaFormatada = format.format(entrega);
 //		Assertions.assertEquals(data, dataEntregaFormatada);
