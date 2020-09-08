@@ -3,6 +3,7 @@ package com.danielqueiroz.steps;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
 
 import org.junit.jupiter.api.Assertions;
 
@@ -12,6 +13,7 @@ import com.danielqueiroz.locadora.entidades.TipoAluguel;
 import com.danielqueiroz.locadora.service.AluguelService;
 import com.danielqueiroz.locadora.utils.DateUtils;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
@@ -28,6 +30,14 @@ public class AlugarFilmesSteps {
 	public void um_filme_com_estoque_de_unidades(Integer unidade) {
 		filme = new Filme();
 		filme.setEstoque(unidade);
+	}
+	
+	@Dado("um filme")
+	public void um_filme(DataTable dataTable) {
+		Map<String, String> map = dataTable.asMap(String.class, String.class);
+		filme = new Filme();
+		filme.setEstoque(Integer.parseInt(map.get("estoque")));
+		filme.setAluguel(Integer.parseInt(map.get("preco")));
 	}
 
 	@Dado("que o preço do aluguel seja R$ {int}")
