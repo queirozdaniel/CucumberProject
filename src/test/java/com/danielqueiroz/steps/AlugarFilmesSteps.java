@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Assertions;
 
 import com.danielqueiroz.locadora.entidades.Filme;
 import com.danielqueiroz.locadora.entidades.NotaAluguel;
+import com.danielqueiroz.locadora.entidades.TipoAluguel;
 import com.danielqueiroz.locadora.service.AluguelService;
 import com.danielqueiroz.locadora.utils.DateUtils;
 
@@ -21,7 +22,7 @@ public class AlugarFilmesSteps {
 	private AluguelService aluguelService = new AluguelService();
 	private NotaAluguel notaAluguel;
 	private String erro;
-	private String tipoAluguel;
+	private TipoAluguel tipoAluguel = TipoAluguel.COMUM;
 	
 	@Dado("um filme com estoque de {int} unidades")
 	public void um_filme_com_estoque_de_unidades(Integer unidade) {
@@ -60,7 +61,7 @@ public class AlugarFilmesSteps {
 	
 	@Dado("que o tipo do aluguel seja {word}")
 	public void que_o_tipo_do_aluguel_seja_extendido(String tipo) {
-		tipoAluguel = tipo;
+		tipoAluguel = tipo.equals("semanal") ? TipoAluguel.SEMANAL : tipo.equals("extendido") ? TipoAluguel.EXTENDIDO : TipoAluguel.COMUM;
 	}
 
 	@Quando("a data de entrega será em {int} dia(s)")
