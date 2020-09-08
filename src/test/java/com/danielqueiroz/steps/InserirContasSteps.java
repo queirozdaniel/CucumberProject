@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
@@ -65,6 +67,36 @@ public class InserirContasSteps {
 	public void a_conta_é_inserida_com_sucesso() {
 		String texto = driver.findElement(By.xpath("//div[@class='alert alert-success']")).getText();
 		Assertions.assertEquals("Conta adicionada com sucesso!", texto);
+	}
+	
+	@Entao("sou notificado que o nome da conta é obrigatório")
+	public void sou_notificado_que_o_nome_da_conta_é_obrigatório() {
+		String texto = driver.findElement(By.xpath("//div[@class='alert alert-danger']")).getText();
+		Assertions.assertEquals("Informe o nome da conta", texto);
+	}
+	
+	@Entao("sou notificado que já existe uma conta com esse nome")
+	public void sou_notificado_que_já_existe_uma_conta_com_esse_nome() {
+		String texto = driver.findElement(By.xpath("//div[@class='alert alert-danger']")).getText();
+		Assertions.assertEquals("Já existe uma conta com esse nome!", texto);
+	}
+	
+	@Entao("recebo a mensagem {string}")
+	public void recebo_a_mensagem(String string) {
+		String texto = driver.findElement(By.xpath("//div[starts-with(@class, 'alert alert-')]")).getText();
+		Assertions.assertEquals(string, texto);
+	}
+	
+	
+	@After
+	public void fecharBrowser() {
+		driver.quit();
+		System.out.println("Terminando cenário");
+	}
+	
+	@Before
+	public void inicio() {
+		System.out.println("Começando cenário");
 	}
 	
 }
