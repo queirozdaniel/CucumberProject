@@ -7,17 +7,11 @@ import java.util.Locale;
 
 import org.junit.jupiter.api.Assertions;
 
-import com.danielqueiroz.converters.DateConverter;
-
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 
 public class AprenderCucumberSteps {
-
-	public AprenderCucumberSteps() {
-		new DateConverter();
-	}
 	
 	@Dado("que criei arquivo corretamente")
 	public void que_criei_arquivo_corretamente() {
