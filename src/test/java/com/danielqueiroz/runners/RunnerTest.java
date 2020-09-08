@@ -6,9 +6,9 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty", "summary", "html:target/report.html"}, 
-		features = {"src/test/resources/features/alugar_filme.feature"},
+		features = {"src/test/resources/features/inserir_conta.feature"},
 		glue = {"com.danielqueiroz.steps", "com.danielqueiroz.converters"},
-		tags = "")
+		tags = "not @ignore")
 public class RunnerTest {
 
 }

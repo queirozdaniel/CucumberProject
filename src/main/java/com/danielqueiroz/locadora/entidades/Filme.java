@@ -4,7 +4,7 @@ public class Filme {
 
 	private Integer estoque;
 	private Integer aluguel;
-
+	
 	public Integer getAluguel() {
 		return aluguel;
 	}
